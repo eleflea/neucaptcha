@@ -40,7 +40,7 @@ def _matrix_im(image, box, threshold):
         m.append(v)
     return m
 
-def identify(image, threshold=140, tol=0.75):
+def identify(image, threshold=140, tol=0.85):
     """
     Identify a grayscale (L mode) image and return result.
     Return None if fail.
@@ -68,6 +68,6 @@ def identify(image, threshold=140, tol=0.75):
         print('Can not identify.')
         return None
 
-def scan_captcha(fp, threshold=140, tol=0.75):
+def scan_captcha(fp, threshold=140, tol=0.85):
     """Identify a captcha fp and return result, same as *identify*."""
     return identify(Image.open(fp).convert('L'), threshold, tol)
